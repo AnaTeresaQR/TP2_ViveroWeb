@@ -53,13 +53,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    <body>\n");
       out.write("\n");
-      out.write("    <li><a id=\"registerUser\" href=\"RegisterUpdateUser.jsp?typeValue=1\">Registrarme</a></li> </br>\n");
-      out.write("    <li><a id=\"loginUser\" href=\"UserLogin.jsp\">Ingresar Usuario</a></li> </br>\n");
-      out.write("    <li><a id=\"deleteUser\" href=\"DeleteUser.jsp\">Borrar Usuario</a></li> </br>\n");
-      out.write("    <li><a id=\"updateUser\" href=\"RegisterUpdateUser.jsp?typeValue=2\">Actualizar Usuario</a></li> </br>\n");
+      out.write("    <li><a id=\"registerUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=1\">Registrarme</a></li> </br>\n");
+      out.write("    <li><a id=\"loginUser\" href=\"UserDatajsp/UserLogin.jsp\">Ingresar Usuario</a></li> </br>\n");
+      out.write("    <li><a id=\"deleteUser\" href=\"UserDatajsp/DeleteUser.jsp\">Borrar Usuario</a></li> </br>\n");
+      out.write("    <li><a id=\"updateUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=2\">Actualizar Usuario</a></li> </br>\n");
       out.write("\n");
       out.write("    <br></br>\n");
-      out.write("    <li><a href=\"AdminLogin.jsp\">Ingresar Administrador</a></li> </br>\n");
+      out.write("    <li><a href=\"AdminData/AdminLogin.jsp\">Ingresar Administrador</a></li> </br>\n");
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");

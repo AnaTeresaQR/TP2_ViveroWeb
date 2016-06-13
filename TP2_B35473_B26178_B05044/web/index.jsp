@@ -10,13 +10,13 @@
 
     <body>
 
-    <li><a id="registerUser" href="RegisterUpdateUser.jsp?typeValue=1">Registrarme</a></li> </br>
-    <li><a id="loginUser" href="UserLogin.jsp">Ingresar Usuario</a></li> </br>
-    <li><a id="deleteUser" href="DeleteUser.jsp">Borrar Usuario</a></li> </br>
-    <li><a id="updateUser" href="RegisterUpdateUser.jsp?typeValue=2">Actualizar Usuario</a></li> </br>
+    <li><a id="registerUser" href="UserDatajsp/RegisterUpdateUser.jsp?typeValue=1">Registrarme</a></li> </br>
+    <li><a id="loginUser" href="UserDatajsp/UserLogin.jsp">Ingresar Usuario</a></li> </br>
+    <li><a id="deleteUser" href="UserDatajsp/DeleteUser.jsp">Borrar Usuario</a></li> </br>
+    <li><a id="updateUser" href="UserDatajsp/RegisterUpdateUser.jsp?typeValue=2">Actualizar Usuario</a></li> </br>
 
     <br></br>
-    <li><a href="AdminLogin.jsp">Ingresar Administrador</a></li> </br>
+    <li><a href="AdminData/AdminLogin.jsp">Ingresar Administrador</a></li> </br>
 
 </body>
 </html>

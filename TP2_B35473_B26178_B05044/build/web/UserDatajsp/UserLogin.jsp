@@ -6,26 +6,23 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script type="text/javascript" src="Registerjs/javaScriptJQueryMethod.js"></script>
         <script type="text/javascript" src="Registerjs/ValidateObjAttributes.js"></script>
-        <script type="text/javascript" src="Registerjs/ConfirmActionForm.js"></script>
-        <title>DeleteUsuario</title>
+        <title>Login Usuario</title>
     </head>
     <body>
-        <div id = "showDeleteUserForm">
+        <div id = "showLoginUserForm">
 
-            <a onclick="ocultarDiv('#showDeleteUserForm')">Cerrar</a>  
+            <a onclick="ocultarDiv('#showLoginUserForm')">Cerrar</a>  
 
-            <h1>Ingrese sus datos para eliminar su cuenta</h1>
+            <h1>Formulario de Ingresar Usuario</h1>
 
-            <form id="deleteUserForm" 
-                  onsubmit="return confirmAction('deleteUserForm', '¿Seguro desea borrar su cuenta?')" 
-                  method="post" action="DeleteUserResult.jsp" required>                         
+            <form onsubmit="" method="post" action="UserDataResultjsp/LoginUserResult.jsp" required>                         
                 <label>Email:</label>
                 <input type="text" name="email" placeholder="hola@ejemplo.com" required oninput="validateEmail(this)"/>
                 <br><br/>
                 <label>Email Password:</label>
                 <input type="password" name="password"  placeholder="Escriba su contraseña" required oninput="validatePassword(this)"/>
                 <br><br/>
-                <input type="submit" value="Borrar Cuenta"/>
+                <input  type="submit" value="Ingresar"/>
                 <input type="reset" value="Vaciar Campos"/>
             </form>
 

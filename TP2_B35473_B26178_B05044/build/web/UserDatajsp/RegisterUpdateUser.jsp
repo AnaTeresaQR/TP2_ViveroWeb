@@ -16,11 +16,11 @@
             String valueSubmit = "";
             switch (typeValue) {
                 case 1:
-                    urlAction = "RegisterResult.jsp";
+                    urlAction = "UserDataResultjsp/RegisterResult.jsp";
                     valueSubmit = "Registrar";
                     break;
                 case 2:
-                    urlAction = "UpdateUserResult.jsp";
+                    urlAction = "UserDataResultjsp/UpdateUserResult.jsp";
                     valueSubmit = "Actualizar";
                     break;
                 default:
