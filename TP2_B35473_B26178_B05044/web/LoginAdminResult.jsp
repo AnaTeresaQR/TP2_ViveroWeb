@@ -19,9 +19,8 @@
             AdminController controller = new AdminController();
             administrator = controller.loginAdmin(administrator);
 
-            session.setAttribute("email", administrator.getEmail());
+            session.setAttribute("admin", administrator);
         %>
-
 
         <jsp:setProperty name="administrator" property="idAdmin" value="<%=administrator.getIdAdmin()%>"/>
         <p>
