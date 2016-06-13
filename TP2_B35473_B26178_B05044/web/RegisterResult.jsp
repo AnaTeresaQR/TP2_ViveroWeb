@@ -22,7 +22,7 @@
             PrincipalController controller = new PrincipalController();
             controller.createUserModel(userModel);
 
-            session.setAttribute("userName", userModel.getUserName());
+            session.setAttribute("user", userModel);
         %>
 
         <a href="index.jsp">Inicio</a>

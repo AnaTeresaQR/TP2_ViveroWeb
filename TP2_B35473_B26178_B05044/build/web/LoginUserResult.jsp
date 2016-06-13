@@ -18,7 +18,7 @@
             PrincipalController controller = new PrincipalController();
             userModel = controller.loginUser(userModel);
 
-            session.setAttribute("email", userModel.getEmail());
+            session.setAttribute("user", userModel);
         %>
 
         <jsp:setProperty name="userModel" property="id" value="<%=userModel.getId()%>"/>

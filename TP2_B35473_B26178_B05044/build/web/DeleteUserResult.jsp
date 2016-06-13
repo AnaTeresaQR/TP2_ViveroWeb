@@ -17,7 +17,7 @@
         <%
             PrincipalController controller = new PrincipalController();
 
-            String emailSession = (String) session.getAttribute("email");
+            String emailSession = (String) session.getAttribute("user");
             boolean result = false;
             if (userModel.getEmail().equals(emailSession)) {
                 result = controller.deleteUser(userModel);
@@ -26,9 +26,9 @@
             String resultDelete = "";
             if (result) {
                 resultDelete += " EXITOSA ";
-                session.removeAttribute("email");
+                session.removeAttribute("user");
                 session.invalidate();
-                //F response.sendRedirect("index.jsp");
+                //response.sendRedirect("index.jsp");
             } else {
                 resultDelete += " FALLIDA, lo sentimos por favor intente de nuevo";
 
