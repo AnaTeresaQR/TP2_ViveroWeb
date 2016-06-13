@@ -24,6 +24,7 @@
             String resultUpdate = "";
             if (result) {
                 resultUpdate = " EXITOSO ";
+
                 session.setAttribute("user", userModel);
             } else {
                 resultUpdate = " FALLIDO, lo sentimos por favor intente de nuevo";
@@ -32,6 +33,7 @@
 
         <p>
             El resultado de actualizar sus datos fue <%=resultUpdate%>
+            y sus nuevos datos son <%=userModel.getEmail() + "\n" + userModel.getUserName()%>
         </p>
 
         <a href="index.jsp">Inicio</a>
