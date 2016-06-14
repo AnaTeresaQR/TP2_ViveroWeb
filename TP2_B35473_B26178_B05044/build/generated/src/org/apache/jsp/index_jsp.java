@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import objectModel.UserModel;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -30,7 +31,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -43,15 +44,29 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>TODO supply a title</title>\n");
+      out.write("        <title>Index</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("    </head>\n");
       out.write("\n");
       out.write("    <body>\n");
+      out.write("\n");
+      out.write("        ");
+
+            String email;
+            UserModel sessionUser = (UserModel) session.getAttribute("user");
+            if (sessionUser == null) {
+                email = "No hay login";
+            } else {
+                email = sessionUser.getEmail();
+            }
+        
+      out.write("\n");
+      out.write("        <p> El email login es: ");
+      out.print(email);
+      out.write("</p>\n");
       out.write("\n");
       out.write("    <li><a id=\"registerUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=1\">Registrarme</a></li> </br>\n");
       out.write("    <li><a id=\"loginUser\" href=\"UserDatajsp/UserLogin.jsp\">Ingresar Usuario</a></li> </br>\n");
@@ -62,7 +77,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <li><a href=\"AdminData/AdminLogin.jsp\">Ingresar Administrador</a></li> </br>\n");
       out.write("\n");
       out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

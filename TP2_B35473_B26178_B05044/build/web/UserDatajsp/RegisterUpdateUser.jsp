@@ -9,23 +9,25 @@
         <title>Registro de Usuario</title>
     </head>
     <body>
-        <%
-            String strTypeValue = request.getParameter("typeValue");
-            int typeValue = Integer.parseInt(strTypeValue);
-            String urlAction = "";
-            String valueSubmit = "";
-            switch (typeValue) {
-                case 1:
-                    urlAction = "UserDataResultjsp/RegisterResult.jsp";
-                    valueSubmit = "Registrar";
-                    break;
-                case 2:
-                    urlAction = "UserDataResultjsp/UpdateUserResult.jsp";
-                    valueSubmit = "Actualizar";
-                    break;
-                default:
-            }
-        %>
+        <%--  <% 
+              String strTypeValue = request.getParameter("typeValue");
+              int typeValue = Integer.parseInt(strTypeValue);
+              String urlAction = "";
+              String valueSubmit = "";
+              switch (typeValue) {
+                  case 1:
+                      urlAction = "RegisterResult.jsp";
+                      valueSubmit = "Registrar";
+                      break;
+                  case 2:
+                      urlAction = "UpdateUserResult.jsp";
+                      valueSubmit = "Actualizar";
+                      break;
+                  default: 
+              }
+          %> --%>
+
+        <%@include file="OptionUpdateRegister.jsp" %>
 
         <div id = "showRegisterForm">
 

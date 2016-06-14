@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Resultado Actualizar</title>
+        <title>Resultado Registro</title>
     </head>
     <body>
 
@@ -20,23 +20,14 @@
 
         <%
             PrincipalController controller = new PrincipalController();
-            boolean result = controller.updateUser(userModel);
-            String resultUpdate = "";
-            if (result) {
-                resultUpdate = " EXITOSO ";
+            
+            controller.createUserModel(userModel);
 
-                session.setAttribute("user", userModel);
-            } else {
-                resultUpdate = " FALLIDO, lo sentimos por favor intente de nuevo";
-            }
+            session.setAttribute("user", userModel);
         %>
 
-        <p>
-            El resultado de actualizar sus datos fue <%=resultUpdate%>
-            y sus nuevos datos son <%=userModel.getEmail() + "\n" + userModel.getUserName()%>
-        </p>
-
-        <a href="index.jsp">Inicio</a>
+        <a href="../index.jsp">Inicio</a>
 
     </body>
 </html>
+

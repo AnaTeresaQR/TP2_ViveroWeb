@@ -16,19 +16,19 @@
 
         <%
             PrincipalController controller = new PrincipalController();
-            userModel = controller.loginUser(userModel);
+            UserModel newUserModel = controller.loginUser(userModel);
 
-            session.setAttribute("user", userModel);
+            session.setAttribute("user", newUserModel);
         %>
 
-        <jsp:setProperty name="userModel" property="id" value="<%=userModel.getId()%>"/>
+        <jsp:setProperty name="userModel" property="id" value="<%=newUserModel.getId()%>"/>
         <p>
             El usuario ingresado 
             <jsp:getProperty name="userModel" property="email"/>
             Bienvenido su id es:
             <jsp:getProperty name="userModel" property="id"/>
             
-            <a href="index.jsp">Inicio</a>
+            <a href="../index.jsp">Inicio</a>
         </p>      
     </body>
 </html>

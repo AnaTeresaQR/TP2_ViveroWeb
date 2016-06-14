@@ -1,14 +1,24 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="objectModel.UserModel" %>
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Index</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
+
+        <%
+            String email;
+            UserModel sessionUser = (UserModel) session.getAttribute("user");
+            if (sessionUser == null) {
+                email = "No hay login";
+            } else {
+                email = sessionUser.getEmail();
+            }
+        %>
+        <p> El email login es: <%=email%></p>
 
     <li><a id="registerUser" href="UserDatajsp/RegisterUpdateUser.jsp?typeValue=1">Registrarme</a></li> </br>
     <li><a id="loginUser" href="UserDatajsp/UserLogin.jsp">Ingresar Usuario</a></li> </br>

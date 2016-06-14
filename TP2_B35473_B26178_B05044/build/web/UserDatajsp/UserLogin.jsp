@@ -15,7 +15,7 @@
 
             <h1>Formulario de Ingresar Usuario</h1>
 
-            <form onsubmit="" method="post" action="UserDataResultjsp/LoginUserResult.jsp" required>                         
+            <form onsubmit="" method="post" action="LoginUserResult.jsp" required>                         
                 <label>Email:</label>
                 <input type="text" name="email" placeholder="hola@ejemplo.com" required oninput="validateEmail(this)"/>
                 <br><br/>
