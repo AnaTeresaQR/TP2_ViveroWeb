@@ -3,7 +3,7 @@
     Created on : 10/06/2016, 03:11:25 PM
     Author     : Edgardo Quirós
 --%>
-<%@page import="objectModel.UserModel" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -48,29 +48,23 @@
         </div>
 
         <div id="newAccount">
-            <%
-            String email;
-            UserModel sessionUser = (UserModel) session.getAttribute("user");
-            if (sessionUser == null) {
-                email = "No hay login";
-            } else {
-                email = sessionUser.getEmail();
-            }
-        %>
-        <p> El email login es: <%=email%></p>
-
-    <li><a id="registerUser" href="UserDatajsp/RegisterUpdateUser.jsp?typeValue=1">Registrarme</a></li> </br>
-    <li><a id="deleteUser" href="UserDatajsp/DeleteUser.jsp">Borrar Usuario</a></li> </br>
-    <li><a id="updateUser" href="UserDatajsp/RegisterUpdateUser.jsp?typeValue=2">Actualizar Usuario</a></li> </br>
-
-    <br></br>
-    <li><a href="AdminData/AdminLogin.jsp">Ingresar Administrador</a></li> </br>
+            Crear una nueva cuenta: enlace a
+            una página que contiene un formulario con nombres
+            , apellidos, cédula, teléfono, correo electrónico y contraseña.
+            Al crear el usuario correctamente se redirecciona
+            a la página de inicio de sesión. ◦  
 
         </div> 
 
         <div id="startSesion">
-    <li><a id="loginUser" href="UserDatajsp/UserLogin.jsp">Ingresar Usuario</a></li> </br>
-    
+            Iniciar sesión: enlace a una página para ingresar el correo y la contraseña. 
+            Al ser autenticado se mostrará en lugar de este menú, un menú “Mi cuenta”
+            con las opciones de modificar los datos personales, ver compras anteriores, 
+            eliminar su cuenta y cerrar sesión. Para la modificación de los d
+            atos aparecerá el mismo formulario que para la inscripción con 
+            los datos del usuario y se mostrará un mensaje de éxito o fallido al
+            realizar la operación. 
+
         </div>
 
 
@@ -79,3 +73,5 @@
     <%@include file="footer.jsp"%>
 
 </html>
+
+

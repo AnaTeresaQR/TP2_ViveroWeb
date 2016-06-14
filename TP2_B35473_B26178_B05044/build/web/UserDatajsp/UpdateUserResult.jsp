@@ -24,8 +24,8 @@
             String resultUpdate = "";
             if (result) {
                 resultUpdate = " EXITOSO ";
-
-                session.setAttribute("user", userModel);
+                UserModel newUserModel = controller.loginUser(userModel);
+                session.setAttribute("user", newUserModel);
             } else {
                 resultUpdate = " FALLIDO, lo sentimos por favor intente de nuevo";
             }

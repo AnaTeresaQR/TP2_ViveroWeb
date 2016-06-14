@@ -3,7 +3,6 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import objectModel.UserModel;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -136,33 +135,23 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\n");
       out.write("\n");
       out.write("        <div id=\"newAccount\">\n");
-      out.write("            ");
-
-            String email;
-            UserModel sessionUser = (UserModel) session.getAttribute("user");
-            if (sessionUser == null) {
-                email = "No hay login";
-            } else {
-                email = sessionUser.getEmail();
-            }
-        
-      out.write("\n");
-      out.write("        <p> El email login es: ");
-      out.print(email);
-      out.write("</p>\n");
-      out.write("\n");
-      out.write("    <li><a id=\"registerUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=1\">Registrarme</a></li> </br>\n");
-      out.write("    <li><a id=\"deleteUser\" href=\"UserDatajsp/DeleteUser.jsp\">Borrar Usuario</a></li> </br>\n");
-      out.write("    <li><a id=\"updateUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=2\">Actualizar Usuario</a></li> </br>\n");
-      out.write("\n");
-      out.write("    <br></br>\n");
-      out.write("    <li><a href=\"AdminData/AdminLogin.jsp\">Ingresar Administrador</a></li> </br>\n");
+      out.write("            Crear una nueva cuenta: enlace a\n");
+      out.write("            una página que contiene un formulario con nombres\n");
+      out.write("            , apellidos, cédula, teléfono, correo electrónico y contraseña.\n");
+      out.write("            Al crear el usuario correctamente se redirecciona\n");
+      out.write("            a la página de inicio de sesión. ◦  \n");
       out.write("\n");
       out.write("        </div> \n");
       out.write("\n");
       out.write("        <div id=\"startSesion\">\n");
-      out.write("    <li><a id=\"loginUser\" href=\"UserDatajsp/UserLogin.jsp\">Ingresar Usuario</a></li> </br>\n");
-      out.write("    \n");
+      out.write("            Iniciar sesión: enlace a una página para ingresar el correo y la contraseña. \n");
+      out.write("            Al ser autenticado se mostrará en lugar de este menú, un menú “Mi cuenta”\n");
+      out.write("            con las opciones de modificar los datos personales, ver compras anteriores, \n");
+      out.write("            eliminar su cuenta y cerrar sesión. Para la modificación de los d\n");
+      out.write("            atos aparecerá el mismo formulario que para la inscripción con \n");
+      out.write("            los datos del usuario y se mostrará un mensaje de éxito o fallido al\n");
+      out.write("            realizar la operación. \n");
+      out.write("\n");
       out.write("        </div>\n");
       out.write("\n");
       out.write("\n");
@@ -194,6 +183,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("</html>\n");
+      out.write("\n");
+      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

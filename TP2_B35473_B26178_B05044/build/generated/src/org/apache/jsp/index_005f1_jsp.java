@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import objectModel.UserModel;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class index_005f1_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -152,6 +152,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</p>\n");
       out.write("\n");
       out.write("    <li><a id=\"registerUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=1\">Registrarme</a></li> </br>\n");
+      out.write("    <li><a id=\"loginUser\" href=\"UserDatajsp/UserLogin.jsp\">Ingresar Usuario</a></li> </br>\n");
       out.write("    <li><a id=\"deleteUser\" href=\"UserDatajsp/DeleteUser.jsp\">Borrar Usuario</a></li> </br>\n");
       out.write("    <li><a id=\"updateUser\" href=\"UserDatajsp/RegisterUpdateUser.jsp?typeValue=2\">Actualizar Usuario</a></li> </br>\n");
       out.write("\n");
@@ -161,8 +162,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div> \n");
       out.write("\n");
       out.write("        <div id=\"startSesion\">\n");
-      out.write("    <li><a id=\"loginUser\" href=\"UserDatajsp/UserLogin.jsp\">Ingresar Usuario</a></li> </br>\n");
-      out.write("    \n");
+      out.write("            Iniciar sesión: enlace a una página para ingresar el correo y la contraseña. \n");
+      out.write("            Al ser autenticado se mostrará en lugar de este menú, un menú “Mi cuenta”\n");
+      out.write("            con las opciones de modificar los datos personales, ver compras anteriores, \n");
+      out.write("            eliminar su cuenta y cerrar sesión. Para la modificación de los d\n");
+      out.write("            atos aparecerá el mismo formulario que para la inscripción con \n");
+      out.write("            los datos del usuario y se mostrará un mensaje de éxito o fallido al\n");
+      out.write("            realizar la operación. \n");
+      out.write("\n");
       out.write("        </div>\n");
       out.write("\n");
       out.write("\n");
@@ -194,6 +201,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("</html>\n");
+      out.write("\n");
+      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
