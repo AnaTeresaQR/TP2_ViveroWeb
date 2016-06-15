@@ -9,22 +9,25 @@
     </head>
     <body>
 
-        <jsp:useBean id="userModel" scope="session" class="objectModel.UserModel" />
+        <jsp:useBean id="userModelTemp" scope="page" class="objectModel.UserModel" />
 
-        <jsp:setProperty name="userModel" property="userName" param="userName" />
-        <jsp:setProperty name="userModel" property="lastName" param="lastName" />
-        <jsp:setProperty name="userModel" property="schedule" param="schedule" />
-        <jsp:setProperty name="userModel" property="telephone" param="telephone" />
-        <jsp:setProperty name="userModel" property="email" param="email" />
-        <jsp:setProperty name="userModel" property="password" param="password" />
+        <jsp:setProperty name="userModelTemp" property="userName" param="userName" />
+        <jsp:setProperty name="userModelTemp" property="lastName" param="lastName" />
+        <jsp:setProperty name="userModelTemp" property="schedule" param="schedule" />
+        <jsp:setProperty name="userModelTemp" property="telephone" param="telephone" />
+        <jsp:setProperty name="userModelTemp" property="email" param="email" />
+        <jsp:setProperty name="userModelTemp" property="password" param="password" />
+
+        <%UserModel userSession = (UserModel) session.getAttribute("user");%>
 
         <%
+            userModelTemp.setId(userSession.getId());
             PrincipalController controller = new PrincipalController();
-            boolean result = controller.updateUser(userModel);
+            boolean result = controller.updateUser(userModelTemp);
             String resultUpdate = "";
             if (result) {
                 resultUpdate = " EXITOSO ";
-                UserModel newUserModel = controller.loginUser(userModel);
+                UserModel newUserModel = controller.loginUser(userModelTemp);
                 session.setAttribute("user", newUserModel);
             } else {
                 resultUpdate = " FALLIDO, lo sentimos por favor intente de nuevo";
@@ -33,7 +36,7 @@
 
         <p>
             El resultado de actualizar sus datos fue <%=resultUpdate%>
-            y sus nuevos datos son <%=userModel.getEmail() + "\n" + userModel.getUserName()%>
+            y sus nuevos datos son <%=userSession.getEmail() + "\n" + userSession.getUserName()%>
         </p>
 
         <a href="../index.jsp">Inicio</a>
