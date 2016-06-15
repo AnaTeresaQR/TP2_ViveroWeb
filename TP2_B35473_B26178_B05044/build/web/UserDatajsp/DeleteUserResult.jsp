@@ -9,18 +9,21 @@
     </head>
     <body>
 
-        <jsp:useBean id="userModel" scope="session" class="objectModel.UserModel" />
+        <jsp:useBean id="userModelTemp" scope="page" class="objectModel.UserModel" />
+        <jsp:setProperty name="userModelTemp" property="email" param="email" />
+        <jsp:setProperty name="userModelTemp" property="password" param="password" />
 
         <%UserModel userSession = (UserModel) session.getAttribute("user");%>
-
-        <jsp:setProperty name="userModel" property="email" param="email" />
-        <jsp:setProperty name="userModel" property="password" param="password" />
 
         <%
             PrincipalController controller = new PrincipalController();
             boolean result = false;
-            if (userModel.getEmail().equals(userSession.getEmail())) {
-                result = controller.deleteUser(userModel);
+            if (userModelTemp.getEmail().equals(userSession.getEmail())) {
+                if (userModelTemp.getPassword().equals(userSession.getPassword())) {
+                    result = controller.deleteUser(userSession);
+                } else {
+                    result = false;
+                }
             } else {
                 result = false;
             }
@@ -33,7 +36,6 @@
                 //response.sendRedirect("index.jsp");
             } else {
                 resultDelete += " FALLIDA, lo sentimos por favor intente de nuevo";
-                session.setAttribute("user", userModel);
             }
         %>
 
