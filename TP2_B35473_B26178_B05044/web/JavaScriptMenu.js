@@ -1,27 +1,24 @@
-/* When the user clicks on the button, 
- toggle between hiding and showing the dropdown content */
+$(document).ready(function () {
+    $(function () {
+        $("div").hide();
+        $(function () {
+            if ($("input[name=type]").val() === "1") { // cuando esta registrado o no
+                $("#userMenu").fadeIn(300);
+            } else {
+                $("#userMenu").hide();
+            }
+        });
+    });
 
-      $(document).ready(function(){
- $(function() {
-    $("div").hide();
-     $(function (){
-            if ($("input[name=type]").val()==="1") {
-$("#userMenu").fadeIn(300);
-             } else{
-              $("#userMenu").hide();   
-             }
-         });
-
-});
-
-        $("a").click(function(){
+// devuelve el elemento que ocupo y oculta el resto
+    $("a").click(function () {
         var id = $(this).attr("id");
-       $("div").hide();
-        $("div[id="+ id+"]").fadeIn(300);
+        $("div").hide();
+        $("div[id=" + id + "]").fadeIn(300);
     });
 });
-  
-  
+
+
 
 
 

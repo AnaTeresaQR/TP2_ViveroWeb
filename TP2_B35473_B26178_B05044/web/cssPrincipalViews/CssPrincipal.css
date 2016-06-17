@@ -1,0 +1,65 @@
+body {
+
+    background-image: url("../img/fengshui.jpg");
+    background-repeat: no-repeat;
+    background-size:  cover;
+
+}
+
+#header {
+    position: fixed;
+    width: 97.2%;
+    height: 12%;
+    background: thistle;
+    top: 8px;
+    border: 10px solid darkblue;
+    outline: 5px solid darkcyan;
+    background-image: url("../img/fondoHeader.jpg");
+    background-repeat: round;
+    //background-repeat: no-repeat;
+}
+
+#imageLogo {
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 3.5px;
+    top: 8px;
+    background: white;
+}
+
+#tittle {  
+    text-align: center;
+    font-style: oblique;
+}
+
+.menu {
+    background-color: teal;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    margin-top:13%;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+#footer {
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 98.6%;
+    height: 12%;
+    position: fixed;
+    bottom: 0; 
+    background: transparent;
+}
+
+#linksFooter {
+    background: transparent;
+    position: fixed;
+    padding: 0;
+    margin: 2px;
+    bottom: 0;
+    width: 100%;
+}
