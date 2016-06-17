@@ -5,19 +5,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script type="text/javascript" src="JavaScriptMenu.js"></script>
+        <script src="Menujs/JavaScriptMenu.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="cssPrincipalViews/CssPrincipal.css"></>
         <title>Sitio</title>
         <%@include file="General/header.jsp" %>    
     </head>
     <body>
 
-        <%@include file="informationMenu.jsp" %>
-        <%@include file="userMenu.jsp" %>
+        <%@include file="General/informationMenu.jsp" %>
+        <%@include file="General/userMenu.jsp" %>
 
         <input type="hidden" name="type" value="1" />
-
-
 
         <div id="start">
             Inicio: enlace a la página inicial, la cual contiene el top 10 de los productos más vendidos 
