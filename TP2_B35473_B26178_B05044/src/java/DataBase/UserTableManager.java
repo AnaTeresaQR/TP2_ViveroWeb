@@ -10,12 +10,12 @@ import objectModel.UserModel;
  */
 public class UserTableManager {
 
-    private final String USER_TABLE_NAME = "registeruser"; // nombre de la tabla de usuarios
+   private final String USER_TABLE_NAME = "registeruser"; // nombre de la tabla de usuarios
     private final DataBaseManager connectionManager;
 
     public UserTableManager() {
         connectionManager = new DataBaseManager();
-    }
+    } 
 
     public void register(UserModel user) throws SQLException {
 

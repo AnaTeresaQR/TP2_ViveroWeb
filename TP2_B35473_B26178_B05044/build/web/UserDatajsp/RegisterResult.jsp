@@ -20,7 +20,7 @@
 
         <%
             PrincipalController controller = new PrincipalController();
-            
+
             controller.createUserModel(userModel);
 
             session.setAttribute("user", userModel);

@@ -1,5 +1,7 @@
 package objectModel;
 
+import DataBase.ConsultTableManager;
+import java.sql.SQLException;
 
 public class ConsultModel {
 
@@ -7,7 +9,15 @@ public class ConsultModel {
     private String email;
     private String message;
 
+    private ConsultTableManager dataBaseManager = new ConsultTableManager();
+
     public ConsultModel() {
+    }
+
+    public ConsultModel(String completeName, String email, String message) {
+        this.completeName = completeName;
+        this.email = email;
+        this.message = message;
     }
 
     public String getCompleteName() {
@@ -37,6 +47,10 @@ public class ConsultModel {
     @Override
     public String toString() {
         return "ConsultModel{" + "completeName=" + completeName + ", email=" + email + ", message=" + message + '}';
+    }
+
+    public void createModel() throws SQLException {
+        dataBaseManager.saveConsult(this);
     }
 
 }
