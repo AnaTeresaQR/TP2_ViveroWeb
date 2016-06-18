@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <jsp:useBean id="userModel" scope="session" class="objectModel.UserModel" />
+        <jsp:useBean id="userModel" scope="page" class="objectModel.UserModel" />
 
         <jsp:setProperty name="userModel" property="userName" param="userName" />
         <jsp:setProperty name="userModel" property="lastName" param="lastName" />
@@ -22,8 +22,7 @@
             PrincipalController controller = new PrincipalController();
 
             controller.createUserModel(userModel);
-
-            session.setAttribute("user", userModel);
+            response.sendRedirect("UserLogin.jsp");
         %>
 
         <a href="../index.jsp">Inicio</a>

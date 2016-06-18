@@ -30,7 +30,7 @@ public class DataBaseManager {
     public Connection connectDataBase() {
         Connection c = null;
         try {
-            c = DriverManager.getConnection("jdbc:mysql://localhost/mydbregister", "root", "root");
+            c = DriverManager.getConnection("jdbc:mysql://localhost/dbregisterdata", "root", "root");
         } catch (SQLException e) {
             System.err.println(e);
         }
