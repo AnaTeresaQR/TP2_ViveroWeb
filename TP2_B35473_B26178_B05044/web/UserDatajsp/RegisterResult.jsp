@@ -20,9 +20,14 @@
 
         <%
             PrincipalController controller = new PrincipalController();
-
-            controller.createUserModel(userModel);
-            response.sendRedirect("UserLogin.jsp");
+            if (!controller.existEmail(userModel.getEmail())) {
+                controller.createUserModel(userModel);
+                response.sendRedirect("UserLogin.jsp");
+            } else {
+                System.out.print("No me pude registrar");
+                session.setAttribute("msj", "No se pudo registrar, Intente de nuevo");
+                response.sendRedirect("RegisterUpdateUser.jsp?typeValue=1");
+            }
         %>
 
         <a href="../index.jsp">Inicio</a>

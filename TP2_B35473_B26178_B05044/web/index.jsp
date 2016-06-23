@@ -12,42 +12,25 @@
     </head>
     <body>
 
-        <%@include file="General/informationMenu.jsp" %>
+        <%@include file="General/informationMenu.jsp"%>
 
-        <%@include file="General/userMenu.jsp" %>
+        <%@include file="General/userMenu.jsp"%>
 
-        <input type="hidden" name="type" value="1" />
+        <%@include file="ContentTop10.jsp"%>
 
-        <div id="start">
-            Inicio: enlace a la página inicial, la cual contiene el top 10 de los productos más vendidos 
-            (siendo el primero el más vendido). El formato de la página será el mismo que para los productos de una
-            categoría mencionado más adelante.  ◦ 
-
-        </div>
-
-        <div id="information"> 
-            Quiénes somos: enlace a una página que contiene una reseña de la empresa,
-            su misión y visión (deben tener sentido, investigar cómo se realiza). ◦
-        </div>
-
-        <div id="contact">
-            Contáctenos: enlace a una página que
-            contiene el correo electrónico, acceso a redes sociales y la opción de realizar una consulta que corresponde
-            a un formulario con los campos de nombre completo, correo electrónico, área de texto para la redacción de la 
-            consulta y el botón de enviar. Al presionar el botón se muestra un mensaje indicando que será contactado próximamente
-            y se redirecciona a la página de inicio
-
-        </div>
+        <input type="hidden" name="type" value="1">
 
         <div id="newAccount">
-            <%
+            <%                String msj = "";
                 String email;
+                session.setAttribute("msj", msj);
                 UserModel sessionUser = (UserModel) session.getAttribute("user");
                 if (sessionUser == null) {
                     email = "No hay login";
                 } else {
                     email = sessionUser.getEmail();
                 }
+
             %>
             <p> El email login es: <%=email%></p>
 

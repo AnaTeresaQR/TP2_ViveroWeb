@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="objectModel.UserModel" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,11 @@
     </head>
     <body>
 
-        <%@include file="OptionUpdateRegister.jsp" %>
+        <%@include file="../General/informationMenu.jsp"%>
+
+        <%@include file="../General/userMenu.jsp"%>
+
+        <%@include file="OptionUpdateRegister.jsp"%>
 
         <div id = "showRegisterForm" class="formClass">
 
@@ -39,6 +44,8 @@
                 <input type="reset" value="Vaciar Campos"/>
 
             </form>
+
+            <p><%=(String) session.getAttribute("msj")%></p>
 
         </div>
     </body>

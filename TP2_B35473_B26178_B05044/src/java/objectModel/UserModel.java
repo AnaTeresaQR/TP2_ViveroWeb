@@ -2,8 +2,6 @@ package objectModel;
 
 import DataBase.UserTableManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -43,8 +41,17 @@ public class UserModel {
         this.password = password;
     }
 
-    public void createModel() throws SQLException {
-        dataBaseManager.register(this);
+    public boolean existEmail(String email) throws SQLException {
+        return dataBaseManager.existEmail(email);
+    }
+
+    public boolean createModel() {
+        try {
+            dataBaseManager.register(this);
+            return true;
+        } catch (SQLException ex) {
+            return false;
+        }
     }
 
     public UserModel loginUser() throws SQLException {

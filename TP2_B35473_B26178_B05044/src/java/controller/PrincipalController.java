@@ -13,10 +13,22 @@ public class PrincipalController {
 
     private UserModel userModel;
 
-    public void createUserModel(UserModel newUserModel) throws SQLException {
+    public boolean existEmail(String email) {
+        try {
+            userModel = new UserModel();
+            return userModel.existEmail(email);
+        } catch (SQLException ex) {
+            return false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean createUserModel(UserModel newUserModel) throws SQLException {
         userModel = new UserModel();
         userModel = newUserModel;
-        userModel.createModel();
+        return userModel.createModel();
     }
 
     public boolean updateUser(UserModel userToUpdate) {

@@ -1,5 +1,5 @@
 <menu class="menu" id="informationMenu">
-    <a id="start">Inicio</a>
-    <a id="information">Quienes somos</a>
-    <a id="contact">Contactenos</a>
+    <a  href="../index.jsp">Inicio</a>
+    <a  href="../Menusjsp/infoMenu.jsp">Quienes somos</a>
+    <a  href="../Menusjsp/ContactUs.jsp">Contáctenos</a>
 </menu>

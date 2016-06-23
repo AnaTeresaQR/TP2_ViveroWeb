@@ -10,12 +10,12 @@ import objectModel.UserModel;
  */
 public class UserTableManager {
 
-   private final String USER_TABLE_NAME = "registeruser"; // nombre de la tabla de usuarios
+    private final String USER_TABLE_NAME = "registeruser"; // nombre de la tabla de usuarios
     private final DataBaseManager connectionManager;
 
     public UserTableManager() {
         connectionManager = new DataBaseManager();
-    } 
+    }
 
     public void register(UserModel user) throws SQLException {
 
@@ -44,13 +44,25 @@ public class UserTableManager {
         return null;
     }
 
+    public boolean existEmail(String email) throws SQLException {
+        UserModel userLogin = searchUser(email);
+        System.out.println("ExistEmail: " + userLogin);
+        if (userLogin != null) {
+            return true;
+        }
+        return false;
+    }
+
     private UserModel searchUser(String email) throws SQLException {
         UserModel user = null;
+        if (email == null) {
+            return null;
+        }
 
         String sql = "SELECT * FROM " + USER_TABLE_NAME + " WHERE email = " + connectionManager.sqlFormat(email);
         ResultSet rs = connectionManager.executeQueryDB(sql);
 
-        while (rs.next()) {
+        if (rs.next()) {
             int idU = (int) rs.getObject("id");
             String userNameU = (String) rs.getObject("userName");
             String lastNameU = (String) rs.getObject("lastName");
@@ -87,10 +99,14 @@ public class UserTableManager {
     }
 
     public boolean deleteUser(UserModel user) throws SQLException {
+        BillTableManager connectionBill = new BillTableManager();
         UserModel userLogin = searchUser(user.getEmail());
 
         if (userLogin != null) {
             if (userLogin.getPassword().equals(user.getPassword())) {
+
+                connectionBill.deleteBill(user.getId());
+
                 String sqlD = "DELETE FROM " + USER_TABLE_NAME + " WHERE id= " + user.getId();
                 connectionManager.executeUpdateDB(sqlD);
                 return true;

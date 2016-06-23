@@ -1,6 +1,6 @@
 <%
-    String strTypeValue = request.getParameter("typeValue");
-    int typeValue = Integer.parseInt(strTypeValue);
+    String typeValueResult = request.getParameter("typeValue");
+    int typeValue = Integer.parseInt(typeValueResult);
     String urlAction = "";
     String valueSubmit = "";
     switch (typeValue) {
